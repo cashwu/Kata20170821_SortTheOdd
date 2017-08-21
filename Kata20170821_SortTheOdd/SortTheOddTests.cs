@@ -27,6 +27,18 @@ namespace Kata20170821_SortTheOdd
             SortOddArrayShouldBe(new[] { 1, 2, 4, 3 }, new[] { 3, 2, 4, 1 });
         }
 
+        [TestMethod]
+        public void input_5_3_1_8_0_should_return_1_3_5_8_0()
+        {
+            SortOddArrayShouldBe(new[] { 1, 3, 5, 8, 0 }, new[] { 5, 3, 1, 8, 0 });
+        }
+
+        [TestMethod]
+        public void input_5_3_2_8_1_4_should_return_1_3_2_8_5_4()
+        {
+            SortOddArrayShouldBe(new[] { 1, 3, 2, 8, 5, 4 }, new[] { 5, 3, 2, 8, 1, 4 });
+        }
+
         private static void SortOddArrayShouldBe(int[] expected, int[] array)
         {
             var kata = new Kata();
