@@ -21,6 +21,12 @@ namespace Kata20170821_SortTheOdd
             SortOddArrayShouldBe(new[] { 1, 2, 3 }, new[] { 3, 2, 1 });
         }
 
+        [TestMethod]
+        public void input_3_2_4_1_should_return_1_2_4_3()
+        {
+            SortOddArrayShouldBe(new[] { 1, 2, 4, 3 }, new[] { 3, 2, 4, 1 });
+        }
+
         private static void SortOddArrayShouldBe(int[] expected, int[] array)
         {
             var kata = new Kata();
