@@ -51,22 +51,9 @@ namespace Kata20170821_SortTheOdd
     {
         public int[] SortArray(int[] array)
         {
-            var dic = new Dictionary<int, int>();
-            for (var i = 0; i < array.Length; i++)
-            {
-                if (array[i] % 2 != 0)
-                {
-                    dic.Add(i, array[i]);
-                }
-            }
-
-            for (var i = 0; i < dic.Count; i++)
-            {
-                var item = dic.Where((a, j) => j == i).FirstOrDefault();
-                array[item.Key] = dic.OrderBy(a => a.Value).Where((a, j) => j == i).FirstOrDefault().Value;
-            }
-
-            return array;
+            var list = array.Where(n => n % 2 == 1).OrderBy(n => n).ToList();
+            var idx = 0;
+            return array.Select(n => n % 2 == 1 ? list[idx++] : n).ToArray();
         }
     }
 }
